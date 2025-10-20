@@ -10,32 +10,32 @@ print('ventes-par-région.html généré avec succès !')
 
 # 5.a.i. Calcul du chiffre d'affaires par produit moyen
 moyenne_ca = données.groupby('produit').apply(lambda x: (x['prix'] * x['qte']).mean())
-print("-- Moyenne des chiffres d'affaires --")
+print("\n-- Moyenne des chiffres d'affaires --")
 print(moyenne_ca)
 
 # 5.a.ii. Calcul du chiffre d'affaires par produit médian
 mediane_ca = données.groupby('produit').apply(lambda x: (x['prix'] * x['qte']).median())
-print("-- Médiane des chiffres d'affaires --")
+print("\n-- Médiane des chiffres d'affaires --")
 print(mediane_ca)
 
 # 5.a.i. Calcul du volume de vente moyen
 moyenne_volume = données.groupby('produit')['qte'].mean()
-print("-- Moyenne des volumes de vente --")
+print("\n-- Moyenne des volumes de vente --")
 print(moyenne_volume)
 
 # 5.a.ii. Calcul du chiffre d'affaires par produit médian
 mediane_volume = données.groupby('produit')['qte'].median()
-print("-- Médiane des volumes de ventes --")
+print("\n-- Médiane des volumes de ventes --")
 print(mediane_volume)
 
 # 5.b.i. Calcul de l'écart-type des volumes de ventes par produit
 ecart_type_volume = données.groupby('produit')['qte'].std()
-print("-- Écart-type des volumes de vente --")
+print("\n-- Écart-type des volumes de vente --")
 print(ecart_type_volume)
 
 # 5.b.ii. Calcul de la variance du volume des ventes par produit
 variance_volume = données.groupby('produit')['qte'].var()
-print("-- Variance des volumes de ventes --")
+print("\n-- Variance des volumes de ventes --")
 print(variance_volume)
 
 # 6. Produit le plus vendu et le moins vendu
